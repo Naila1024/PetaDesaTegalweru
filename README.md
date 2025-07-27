@@ -1,2 +1,2 @@
-# PetaDesaTegalweru
-Peta Desa Tegalweru
+# PetaWisataTegalweru
+Peta Wisata Tegalweru
