@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Wisata Desa Tegalweru</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        /* Styling untuk peta */
+        #map {
+            width: 100%;
+            height: 90vh;
+            border-radius: 10px;
+        }
+
+        /* Styling untuk judul utama agar berada di tengah */
+        .map-title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 12px 24px;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        /* Styling untuk popup agar judul dan gambar berada di tengah */
+        .popup-content {
+            text-align: center;
+        }
+
+        .popup-content img {
+            width: 200px; /* Ubah ukuran gambar */
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .popup-content h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .popup-content p {
+            font-size: 14px;
+            text-align: justify;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Kontainer untuk Peta dan Judul -->
+    <div class="container">
+        <div class="map-title">Peta Sebaran Wisata Desa Tegalweru</div>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        // Inisialisasi peta
+        var map = L.map('map', {
+            center: [- 7.95725, 112.511694], // Koordinat Desa Kucur
+            zoom: 12
+        });
+
+        // Menambahkan tile layer dari OpenStreetMap
+       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Menambahkan marker dengan popup
+var marker = L.marker([-7.940822211549782, 112.56721664987552]).bindPopup(`
+    <div class="popup-content">
+        <h3>Wisata Petik Jeruk Pak Jupri</h3>
+        <img src="https://static.promediateknologi.id/crop/0x744:3072x2489/0x0/webp/photo/p2/108/2023/12/18/IMG-20231218-WA0022-2710737100.jpg">
+        <p>Wisata petik jeruk Pak Jupri berlokasi di Jengglong, Tegalweru, Kec. Dau, Kabupaten Malang, Jawa Timur.</p>
+    </div>`).addTo(map);
+var marker = L.marker([-7.937650156529076, 112.56660316478245]).bindPopup(`
+    <div class="popup-content">
+        <h3>Wisata Petik Jeruk Tegalweru</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYr-nFILv7CCDAjMPEOqDxJzqe5w4CWJqba7SA_G5dWT0I_5pB8zotfEFp-Enmrl5RVoc&usqp=CAU">
+        <p>Wisata petik jeruk yang berlokasi di Krajan, Tegalweru, Kec. Dau, Kabupaten Malang, Jawa Timur.</p>
+    </div>`).addTo(map);
+var marker = L.marker([-7.941563843416233, 112.5639507439389]).bindPopup(`
+    <div class="popup-content">
+        <h3>Wisata Petik Jeruk</h3>
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYVUjo7YQoSmF-RVp5xTOtjxwV9Dj6DiepQqb1SlsAuBHk_Gb-fclTpuzYSiB2tgyQj9ivgaWQ9KpnYme3lS5_GdOO6bLt5Gh1WuAnq6yFCkFcwkG_NJOgpIewthSOIpzQ-y59Ax4062k/s1600/1441704100-Panen-Raya-Petik-Jeruk-Jadi-Agenda-Wisata.jpg">
+        <p>Wisata petik jeruk Pak Jupri berlokasi di Krajan, Tegalweru, Kec. Dau, Kabupaten Malang, Jawa Timur.</p>
+    </div>`).addTo(map);
+var marker = L.marker([-7.934383712486517, 112.56266946380448]).bindPopup(`
+    <div class="popup-content">
+        <h3>Kanvill Dau</h3>
+        <img src="https://gluttonwanderers.com/wp-content/uploads/2022/05/wp-1653149685337.jpg">
+        <p> Kanvill Dau buka seriap hari pukul 09.00 sampai 22.00, dan terletak di Jl. Raya Tegalweru, Krajan, Junreju, Kec. Dau, Kabupaten Malang, Jawa Timur. </p>
+    </div>`).addTo(map);
+    </script>
+
+</body>
+</html>
